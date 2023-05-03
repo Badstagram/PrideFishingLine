@@ -3,10 +3,14 @@
   "id": "pridefishinglines",
   "version": "${version}",
   "name": "PrideFishingLine",
-  "description": "",
-  "authors": [],
+  "description": "Simple mixin mod to make the fishing line pride coloured",
+  "authors": [
+    "Badstagram"
+  ],
   "contact": {
-    "repo": "https://github.com/me/PrideFishingLine"
+    "repo": "https://github.com/Badstagram/PrideFishingLine",
+    "issues": "https://github.com/Badstagram/PrideFishingLine/issues",
+    "homepage": "https://github.com/Badstagram/PrideFishingLine"
   },
   "license": "MIT",
   "icon": "assets/pridefishinglines/icon.png",
