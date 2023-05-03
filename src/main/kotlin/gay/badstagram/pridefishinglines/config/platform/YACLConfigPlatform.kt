@@ -13,7 +13,7 @@ import net.minecraft.text.Text
 object YACLConfigPlatform {
     fun buildScreen(parent: Screen?): Screen {
         val builder =
-            YetAnotherConfigLib.createBuilder().title(Text.literal("foo")).save(ConfigManager::saveConfigToFile)
+            YetAnotherConfigLib.createBuilder().title(Text.literal("Pride Fishing Lines")).save(ConfigManager::saveConfigToFile)
 
         val styleCategory = ConfigCategory.createBuilder().name(Text.literal("bar"))
             .options(listOf(Option.createBuilder(Boolean::class.java).name(Text.literal("enabled")).binding(true,
