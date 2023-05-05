@@ -3,6 +3,7 @@ package gay.badstagram.pridefishinglines.mixin;
 import gay.badstagram.pridefishinglines.config.ConfigManager;
 import gay.badstagram.pridefishinglines.config.PrideFishingLineStyles;
 import gay.badstagram.pridefishinglines.config.PrideFishingLinesConfig;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.FishingBobberEntityRenderer;
@@ -13,6 +14,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,6 +23,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
+
+import java.util.UUID;
 
 @Mixin(FishingBobberEntityRenderer.class)
 public abstract class FishingBobberEntityRendererMixin {
@@ -72,6 +77,11 @@ public abstract class FishingBobberEntityRendererMixin {
         if (bobberOwner == null) return;
 
         if (!cfg.getEnabled()) {
+            buffer.vertex(matrices.getPositionMatrix(), f, gg, h).color(0, 0, 0, 255).normal(matrices.getNormalMatrix(), i, j, k).next();
+            return;
+        };
+
+        if (cfg.getHideOthers() && !bobberOwner.getUuidAsString().equals(MinecraftClient.getInstance().player.getUuidAsString())) {
             buffer.vertex(matrices.getPositionMatrix(), f, gg, h).color(0, 0, 0, 255).normal(matrices.getNormalMatrix(), i, j, k).next();
             return;
         };
