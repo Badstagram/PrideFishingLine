@@ -35,7 +35,7 @@
     "minecraft": "${minecraft_version}"
   },
   "recommends": {
-    "yet_another_config_lib": "^2.5.0+1.19.4",
-    "modmenu": "^6.2.2"
+    "yet_another_config_lib": "^0.83.0+1.20",
+    "modmenu": "^7.0.1"
   }
 }

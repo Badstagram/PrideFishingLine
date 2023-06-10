@@ -1,6 +1,7 @@
 package gay.badstagram.pridefishinglines.config
 
-import dev.isxander.yacl.api.NameableEnum
+
+import dev.isxander.yacl3.api.NameableEnum
 import net.minecraft.text.Text
 
 
