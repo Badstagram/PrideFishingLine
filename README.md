@@ -1,3 +1,6 @@
+### Moved
+This repo was moved [here](https://github.com/badstagram33/PrideFishingLine)
+
 Mod fork based on [Colored Fishing Lines](https://modrinth.com/mod/dyeable-fishing-lines) but modified to be customisable using [YetAnotherConfigLib](https://modrinth.com/mod/yacl)
 
 
