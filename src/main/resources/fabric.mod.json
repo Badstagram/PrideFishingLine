@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "pridefishinglines",
+  "version": "${version}",
+  "name": "PrideFishingLine",
+  "description": "Simple mixin mod to make the fishing line pride coloured!",
+  "authors": [
+    "Badstagram"
+  ],
+  "contact": {
+    "repo": "https://github.com/Badstagram/PrideFishingLine",
+    "issues": "https://github.com/Badstagram/PrideFishingLine/issues",
+    "homepage": "https://github.com/Badstagram/PrideFishingLine"
+  },
+  "license": "MIT",
+  "icon": "assets/pridefishinglines/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      {
+        "value": "gay.badstagram.pridefishinglines.PrideFishingLines",
+        "adapter": "kotlin"
+      }
+    ],
+    "client": [
+      "gay.badstagram.pridefishinglines.client.PrideFishingLineClient"
+    ],
+    "modmenu": [
+      "gay.badstagram.pridefishinglines.ModMenuImpl"
+    ]
+  },
+  "mixins": [
+    "pridefishinglines.mixins.json",
+    {
+      "config": "pridefishinglines.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.9",
+    "minecraft": "~1.21.3",
+    "yet_another_config_lib_v3": ">=3.6.1+1.21.2-fabric",
+    "java": ">=21",
+    "fabric-api": "*",
+    "fabric-language-kotlin": "*"
+  }
+}

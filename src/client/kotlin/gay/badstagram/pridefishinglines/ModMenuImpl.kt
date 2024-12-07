@@ -1,0 +1,20 @@
+package gay.badstagram.pridefishinglines
+
+import com.terraformersmc.modmenu.api.ConfigScreenFactory
+import com.terraformersmc.modmenu.api.ModMenuApi
+import com.terraformersmc.modmenu.gui.ModsScreen
+import gay.badstagram.pridefishinglines.screen.ConfigLibMissingScreen
+import net.fabricmc.loader.api.FabricLoader
+import java.io.ObjectInputFilter.Config
+
+class ModMenuImpl : ModMenuApi {
+    override fun getModConfigScreenFactory(): ConfigScreenFactory<*> {
+        return ConfigScreenFactory {
+            if (FabricLoader.getInstance().isModLoaded("yet_another_config_lib_v3")) {
+                YACLConfigPlatform.buildScreen(ModsScreen(null))
+            } else {
+                ConfigLibMissingScreen()
+            }
+        }
+    }
+}
