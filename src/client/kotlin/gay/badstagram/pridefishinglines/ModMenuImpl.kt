@@ -5,7 +5,6 @@ import com.terraformersmc.modmenu.api.ModMenuApi
 import com.terraformersmc.modmenu.gui.ModsScreen
 import gay.badstagram.pridefishinglines.screen.ConfigLibMissingScreen
 import net.fabricmc.loader.api.FabricLoader
-import java.io.ObjectInputFilter.Config
 
 class ModMenuImpl : ModMenuApi {
     override fun getModConfigScreenFactory(): ConfigScreenFactory<*> {
